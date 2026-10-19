@@ -1,4 +1,10 @@
-CLASS zbp_cds_rfq_ce DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zcds_rfq_ce.
+class ZBP_CDS_RFQ_CE definition
+  public
+  create private .
+
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
