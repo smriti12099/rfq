@@ -1,0 +1,468 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'RFQ Comparison',
+    typeNamePlural: 'RFQ Comparisons',
+    title: {
+      type: #STANDARD,
+      value: 'rfq'
+    }
+  }
+}
+@UI.deleteHidden: true
+//annotate view ZCDS_C_RFQ with
+annotate entity Zcds_rfq_ce
+    with
+{
+   @UI.facet: [
+    {
+      id: 'General',
+      label: 'General Information',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GENERAL',
+      position: 10
+    },
+    {
+            id: 'ComparisonHeader',
+            purpose: #STANDARD,
+            type: #FIELDGROUP_REFERENCE,
+            label: 'Create Comparison',
+            position: 10,
+            targetQualifier: 'Header'
+      },
+    
+    {
+      id: 'Quotation1',
+      label: 'Quotation 1',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'Q1',
+      position: 20
+    },
+
+    {
+      id: 'Quotation2',
+      label: 'Quotation 2',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'Q2',
+      position: 30
+    },
+
+    {
+      id: 'Quotation3',
+      label: 'Quotation 3',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'Q3',
+      position: 40
+    },
+
+    {
+      id: 'Quotation4',
+      label: 'Quotation 4',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'Q4',
+      position: 50
+    }
+  ]
+  
+  
+  
+    // =========================================================
+    // HEADER FIELDS
+    // =========================================================
+  @EndUserText.label: 'RFQ Number'  
+ @UI.selectionField: [{ position: 1 }]
+  @UI.lineItem: [{ position: 1 }]
+    @UI.fieldGroup: [
+        {
+            qualifier: 'Header',
+            position: 10
+        }
+    ]
+    rfq;
+
+  @EndUserText.label: 'Procurement Type'  
+    @UI.fieldGroup: [
+        {
+            qualifier: 'Header',
+            position: 20
+        }
+    ]
+//      @Consumption.valueHelpDefinition: [
+//{
+//    entity: {
+//        name: 'ZCDS_I_DOMAIN_PARAMETERS',
+//        element: 'ParametersText'
+//    },
+//    useForValidation: true
+//}
+//]
+    procurement_type;
+    
+  @EndUserText.label: 'RFQ Date'  
+    @UI.fieldGroup: [
+        {
+            qualifier: 'Header',
+            position: 30
+        }
+    ]
+    rfq_date;
+  
+  
+  
+  
+  
+    @UI.fieldGroup: [
+    {
+      qualifier: 'Q1',
+      position: 10,
+      label: 'Supplier'
+    }
+  ]
+  q1_supplier;
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'Q1',
+      position: 20,
+      label: 'Quotation Date'
+    }
+  ]
+  q1_quotation_date;
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'Q1',
+      position: 30,
+      label: 'Payment Term'
+    }
+  ]
+  q1_payment_terms;
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'Q1',
+      position: 40,
+      label: 'Inco Term'
+    }
+  ]
+  q1_inco_terms;
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'Q1',
+      position: 50,
+      label: 'Price'
+    }
+  ]
+  q1_price;
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'Q1',
+      position: 60,
+      label: 'Delivery Date'
+    }
+  ]
+  q1_delivery_date;
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'Q1',
+      position: 70,
+      label: 'Guarantee Duration'
+    }
+  ]
+  q1_guarantee_duration;
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'Q1',
+      position: 80,
+      label: 'Guarantee Period'
+    }
+  ]
+  q1_guarantee_period;
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'Q1',
+      position: 90,
+      label: 'Warranty Duration'
+    }
+  ]
+  q1_warranty_duration;
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'Q1',
+      position: 100,
+      label: 'Warranty Period'
+    }
+  ]
+  q1_warranty_period;
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'Q1',
+      position: 110,
+      label: 'LD Min %'
+    }
+  ]
+  q1_ld_min_percent;
+
+  @UI.fieldGroup: [
+    {
+      qualifier: 'Q1',
+      position: 120,
+      label: 'LD Max %'
+    }
+  ]
+  q1_ld_max_percent;
+
+//      @Consumption.valueHelpDefinition: [
+//{
+//    entity: {
+//        name: 'ZVH_TECH_RATE',
+//        element: 'TechnicalRateText'
+//    },
+//    useForValidation: true
+//}
+//]
+  @UI.fieldGroup: [
+    {
+      qualifier: 'Q1',
+      position: 130,
+      label: 'Technical Rating'
+    }
+  ]
+  q1_technical_rating;
+  
+  
+  
+    @UI.fieldGroup: [
+    { qualifier: 'Q2', position: 10, label: 'Supplier' }
+  ]
+  q2_supplier;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q2', position: 20, label: 'Quotation Date' }
+  ]
+  q2_quotation_date;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q2', position: 30, label: 'Payment Term' }
+  ]
+  q2_payment_terms;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q2', position: 40, label: 'Inco Term' }
+  ]
+  q2_inco_terms;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q2', position: 50, label: 'Price' }
+  ]
+  q2_price;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q2', position: 60, label: 'Delivery Date' }
+  ]
+  q2_delivery_date;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q2', position: 70, label: 'Guarantee Duration' }
+  ]
+  q2_guarantee_duration;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q2', position: 80, label: 'Guarantee Period' }
+  ]
+  q2_guarantee_period;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q2', position: 90, label: 'Warranty Duration' }
+  ]
+  q2_warranty_duration;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q2', position: 100, label: 'Warranty Period' }
+  ]
+  q2_warranty_period;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q2', position: 110, label: 'LD Min %' }
+  ]
+  q2_ld_min_percent;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q2', position: 120, label: 'LD Max %' }
+  ]
+  q2_ld_max_percent;
+//      @Consumption.valueHelpDefinition: [
+//{
+//    entity: {
+//        name: 'ZVH_TECH_RATE',
+//        element: 'TechnicalRateText'
+//    },
+//    useForValidation: true
+//}
+//]
+  @UI.fieldGroup: [
+    { qualifier: 'Q2', position: 130, label: 'Technical Rating' }
+  ]
+  q2_technical_rating;
+  
+  
+    @UI.fieldGroup: [
+    { qualifier: 'Q3', position: 10 , label: 'Supplier'}
+  ]
+  q3_supplier;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q3', position: 20, label: 'Quotation Date' }
+  ]
+  q3_quotation_date;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q3', position: 30, label: 'Payment Term' }
+  ]
+  q3_payment_terms;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q3', position: 40, label: 'Inco Term' }
+  ]
+  q3_inco_terms;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q3', position: 50, label: 'Price' }
+  ]
+  q3_price;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q3', position: 60, label: 'Delivery Date' }
+  ]
+  q3_delivery_date;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q3', position: 70, label: 'Guarantee Duration' }
+  ]
+  q3_guarantee_duration;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q3', position: 80, label: 'Guarantee Period' }
+  ]
+  q3_guarantee_period;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q3', position: 90, label: 'Warranty Duration' }
+  ]
+  q3_warranty_duration;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q3', position: 100, label: 'Warranty Period' }
+  ]
+  q3_warranty_period;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q3', position: 110, label: 'LD Min %' }
+  ]
+  q3_ld_min_percent;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q3', position: 120, label: 'LD Max %' }
+  ]
+  q3_ld_max_percent;
+
+//      @Consumption.valueHelpDefinition: [
+//{
+//    entity: {
+//        name: 'ZVH_TECH_RATE',
+//        element: 'TechnicalRateText'
+//    },
+//    useForValidation: true
+//}
+//]
+  @UI.fieldGroup: [
+    { qualifier: 'Q3', position: 130, label: 'Technical Rating' }
+  ]
+  q3_technical_rating;
+  
+  
+    @UI.fieldGroup: [
+    { qualifier: 'Q4', position: 10, label: 'Supplier' }
+  ]
+  q4_supplier;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q4', position: 20, label: 'Quotation Date' }
+  ]
+  q4_quotation_date;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q4', position: 30, label: 'Payment Term' }
+  ]
+  q4_payment_terms;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q4', position: 40, label: 'Inco Term' }
+  ]
+  q4_inco_terms;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q4', position: 50, label: 'Price' }
+  ]
+  q4_price;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q4', position: 60, label: 'Delivery Date' }
+  ]
+  q4_delivery_date;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q4', position: 70, label: 'Guarantee Duration' }
+  ]
+  q4_guarantee_duration;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q4', position: 80, label: 'Guarantee Period' }
+  ]
+  q4_guarantee_period;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q4', position: 90, label: 'Warranty Duration' }
+  ]
+  q4_warranty_duration;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q4', position: 100, label: 'Warranty Period' }
+  ]
+  q4_warranty_period;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q4', position: 110, label: 'LD Min %' }
+  ]
+  q4_ld_min_percent;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q4', position: 120, label: 'LD Max %' }
+  ]
+  q4_ld_max_percent;
+
+  @UI.fieldGroup: [
+    { qualifier: 'Q4', position: 130, label: 'Technical Rating' }
+  ]
+  q4_technical_rating;
+
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

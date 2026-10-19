@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination For RFQ Comparison'
+define service ZSD_RFQ {
+  expose Zcds_rfq_ce;
+}
